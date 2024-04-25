@@ -1,0 +1,36 @@
+<InterfaceView version="1.2" asn1file="cfs_sbn_1_1.acn" UiFile="interfaceview.ui.xml">
+<Function id="{3668350d-10d9-42bb-88d8-4239418f18f9}" name="Function_2" is_type="NO" language="C" default_implementation="default" data_store="NO" fdir="NO" startup_priority="100">
+    <Property name="Taste::coordinates" value="44900 22300 64900 30300"/>
+<Required_Interface id="{38d24acd-cf66-4a6c-b3a0-8a3584970359}" name="PI_1" kind="Message" enable_multicast="true" layer="default" MessageID="10">
+    <Input_Parameter name="p1" type="MyInteger" encoding="NATIVE"/>
+    <Property name="Taste::coordinates" value="44900 25500"/>
+    <Property name="Taste::InheritPI" value="true"/>
+    <Property name="Taste::Autonamed" value="true"/>
+</Required_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Function id="{44130fd5-379a-4d07-ad20-eee988c83a46}" name="Function_1" is_type="NO" language="C" default_implementation="default" data_store="NO" fdir="NO" startup_priority="100">
+    <Property name="Taste::coordinates" value="8400 18700 28400 26700"/>
+<Provided_Interface id="{8ae65327-7783-43ae-a662-153701a0b664}" name="PI_1" kind="Message" enable_multicast="true" layer="default" MessageID="10">
+    <Input_Parameter name="p1" type="MyInteger" encoding="NATIVE"/>
+    <Property name="Taste::coordinates" value="28400 21900"/>
+</Provided_Interface>
+
+    <Implementations>
+        <Implementation name="default" language="C"/>
+    </Implementations>
+</Function>
+
+<Connection id="{3f042e0e-ce37-4b8c-bf22-a837ab0a5cda}">
+    <Source func_name="Function_2" ri_name="PI_1" iface_id="{38d24acd-cf66-4a6c-b3a0-8a3584970359}" connection_kind="Message"/>
+    <Target func_name="Function_1" pi_name="PI_1" iface_id="{8ae65327-7783-43ae-a662-153701a0b664}" connection_kind="Message"/>
+    <Property name="Taste::coordinates" value="44600 25500 36800 25500 36800 21900 29000 21900"/>
+</Connection>
+
+<Layer name="default"/>
+
+</InterfaceView>
